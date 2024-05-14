@@ -45,6 +45,7 @@ function load_page(){
         showConfirmButton: false
        
       });
+      document.getElementById("valores").value =array_ejm
 }
 
 function send_info(){
@@ -75,4 +76,111 @@ function send_info(){
         Swal.fire("Contraseña incorrecta");
       }
 
+  
 }
+ //Array
+ var dias_sem = ["Lunes ", "Martes", "Miercoles", "Jueves ", "Viernes" , "Sabado", "Domingo"];
+ var array_num = [1,2,3,4,5,6,7,8,9];
+ var array_mix = [1,2,5,"abc"];
+ var array_mul = [
+   {name:"Juan",age:18,color:"blue"},
+   {name:"Diego",age:18,color:"red"},
+   {name:"David",age:19,color:"black"},
+   {name:"Andre",age:18,color:"grenn"}
+   
+
+ ]
+
+ var json_ejm = {
+
+   name:"Juan",
+   lastname:"Paredes",
+   phone:"3156665194",
+   email:"jeparedesf@ufpso.edu.co"
+ }
+ 
+ console.log(dias_sem);
+ console.log( array_num);
+ console.log(array_mix);
+ console.log(array_mul);
+
+ 
+ for(let i = 0; i< dias_sem.length;i++){
+
+   console.log(dias_sem[i]);
+
+ }
+
+ var j = 0;
+
+ while(j < array_num.length){
+
+   console.log(array_num(j));
+
+   j++;
+
+ }
+
+var accu = 0;
+
+ for(let h = 0; h < array_num.length; h++){
+
+  accu+= array_num(j);
+
+
+ }
+
+ console.log(accu);
+
+ var suma_age = 0;
+ 
+ for(let k =0; k < array_mul.length; h++){
+
+  suma_age += array_mul[a].age;
+
+ }
+
+ console.log(suma_age);
+ document.getElementById("print_age").innerText = "El valor de la suma es: " + suma_age;
+ document.getElementById("print_age_eti").innerHTML = "<strong> El valor de la suma es: " +suma_age;
+
+ function limpiar(){
+  document.getElementById("valores").value = "";
+  document.getElementById("print_age").innerText = "";
+  document.getElementById("print_age_eti").innerHTML = "";
+ }
+
+
+ var array_ejm = [1,2,3,4,5,6,7,8,9];
+
+ function eliminar(){
+  array_ejm.pop();
+
+  document.getElementById("valores").value = array_ejm;
+
+ }
+ function agregar(){
+  array_ejm.push(20);
+
+  document.getElementById("valores").value = array_ejm;
+ }
+
+ 
+ var array_ejm = [1,2,3,4,5,6,7,8,9];
+
+ function eliminar2(){
+  array_ejm.shift();
+
+  document.getElementById("valores2").value = array_ejm;
+
+ }
+ function agregar2(){
+  array_ejm.unshift(20);
+
+  document.getElementById("valores2").value = array_ejm;
+ }
+ function limpiar2(){
+  document.getElementById("valores2").value = "";
+  document.getElementById("print_age").innerText = "";
+  document.getElementById("print_age_eti").innerHTML = "";
+ }
