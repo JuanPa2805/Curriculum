@@ -45,7 +45,12 @@ function load_page(){
         showConfirmButton: false
        
       });
-      document.getElementById("valores").value =array_ejm
+      document.getElementById("valores").value =array_ejm;
+      document.getElementById("fecha").value =new Date();
+      let fecha = new Date();
+
+      document.getElementById("dia").innerText = fecha.getDay();
+      
 }
 
 function send_info(){
@@ -184,3 +189,31 @@ var accu = 0;
   document.getElementById("print_age").innerText = "";
   document.getElementById("print_age_eti").innerHTML = "";
  }
+
+
+ ////// Funcion para enviar el nombre concatenado //////
+
+ function send_name(){
+  let name_one = document.getElementById("name_one").value;
+  let name_two = document.getElementById("name_two").value;
+  let search_var = document.getElementById("search_var").value;
+  let name_com = name_one.toUpperCase() + name_two.toUpper.toUpperCase();
+  //let variable = name_com.indexOf("I");
+  //let variable = name_com.lastIndexOf("I");
+  //let variable = name_com.charAt(3);
+  let variable = name_com.charAt(search_var);
+  if(search_var <= name_com.length && search_var != 0){
+    
+    //console.log(variable)
+    //Swal.fire(variable);
+    document.getElementById("print_name").innerText = "La letra correspondiente al a "+search_var+" es:" +variable; 
+    
+  }
+  else{
+    swal.fire{
+      icon: "error";
+      title: "El valor supera la cantidad de letras del texto";
+    }
+  }
+  document.getElementById("print_name").innerText = "La letra correspondiente al a "+search_var+" es:" +variable; 
+}
